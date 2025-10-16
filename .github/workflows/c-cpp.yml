@@ -15,7 +15,10 @@ jobs:
       kroki: 
         image: docker.io/yuzutech/kroki
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v4
+        with:
+           submodules: recursive
 
       - name: Install rsync
         run: |
