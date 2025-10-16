@@ -1,4 +1,4 @@
-name: Make Slide
+name: Make Slide (Docker)
 
 on:
   push:
@@ -8,24 +8,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    # 🐳 Usa container que já vem com PlantUML + Graphviz + Java
+    container:
+      image: plantuml/plantuml:latest
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
-
-      - name: Install Asciidoctor dependencies
+      - name: Install Ruby and Asciidoctor
         run: |
+          apk add --no-cache ruby ruby-bundler ruby-dev build-base
           gem install bundler
           gem install asciidoctor-revealjs asciidoctor-diagram
-
-      - name: Install PlantUML and Graphviz
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y graphviz plantuml
 
       - name: Build slides
         run: |
