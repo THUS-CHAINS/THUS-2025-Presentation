@@ -51,8 +51,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         
-      - name: Upload slides as artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload slides
+        uses: actions/upload-pages-artifact@v4
         with:
           name: github-pages
           path: ./build/site/
