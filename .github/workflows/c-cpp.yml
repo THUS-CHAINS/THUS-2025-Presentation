@@ -1,4 +1,4 @@
-name: Make Slide (Docker)
+name: Make Slide
 
 on:
   push:
@@ -8,27 +8,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # 🐳 Container já com PlantUML + Graphviz + Java
     container:
-      image: plantuml/plantuml:latest
+      image: vinixnan/plantuml:latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Ruby and Asciidoctor
-        run: |
-          apt-get update -qq
-          apt-get install -y ruby ruby-bundler ruby-dev build-essential
-          gem install bundler
-          gem install asciidoctor-revealjs asciidoctor-diagram
-
-      - name: Build slides
-        run: |
-          bundle exec asciidoctor-revealjs \
-            -r asciidoctor-diagram \
-            --attribute slides \
-            --attribute diagram-format=svg \
-            -o build/site/index.html src/slides/asciidoc/index.adoc
+      - name: Run Makefile
+        run: make slides
 
       - name: Upload slides as artifact
         uses: actions/upload-artifact@v4
