@@ -1,0 +1,33 @@
+## Targets
+/build/
+/out/
+/target/
+/public/
+
+## NPM
+/node_modules/
+
+## IDE
+.idea/
+.vscode/
+.eclipse/
+
+## Build
+.gradle/
+.gitlab-ci-local/
+
+## PlantUML
+diag-*.png
+
+## Draw IO
+*.drawio.bkp
+*.drawio.dtmp
+
+## Others
+*.log
+.sass-cache
+.DS_Store
+
+## Gem
+.bundle
+Gemfile.lock

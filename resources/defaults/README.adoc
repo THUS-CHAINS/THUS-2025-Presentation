@@ -1,0 +1,24 @@
+= Defaults
+
+Some configuration files from my projects. 
+
+== Git Ignore files
+
+- link:./ignore-files/auto-multiple-choices-ignore[Git Ignore for Auto-Multiple-Choices projects]
+
+== PlantUML Themes
+
+- link:./plantuml/puml-theme-sober.puml[Sober Theme]
+
+
+== Install
+
+Add default files to an Asciidoc presentation project
+
+
+[source,shell]
+----
+mkdir ./resources
+git submodule add https://gitlab.univ-nantes.fr/gl/defaults.git ./resources/defaults/
+echo "include ./resources/defaults/makefiles/asciidoc-reveal.mk" > Makefile
+----

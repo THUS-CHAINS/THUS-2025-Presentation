@@ -1,0 +1,5 @@
+:Author:    Author
+:authorinitials: A
+:Email:     author@univ-nantes.fr
+:Date:      October 2024
+:Revision:  1.0

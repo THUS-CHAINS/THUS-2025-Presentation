@@ -1,0 +1,10 @@
+.colist {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 0 1em;
+    position: relative;
+}
+
+div.imageblock + div.title {
+    font-size: 32px
+}  

@@ -1,0 +1,42 @@
+:defaults: ../../../resources/defaults
+include::{defaults}/asciidoc/commons.adoc[]
+= Presentation Template
+
+
+== License
+
+[.font-size-64]
+--
+include::{defaults}/licenses/nc-sa.adoc[]
+--
+
+include::{includedir}/outline.adoc[]
+
+[#section-one]
+[.impact]
+== Section One
+
+== PlantUML Example
+
+[plantuml,,svg,width=800px,align=center]
+....
+include::{plantumldir}/example.puml[]
+....
+
+include::{includedir}/outline.adoc[]
+
+[#section-two]
+[.impact]
+== Section Two
+
+include::{includedir}/outline.adoc[]
+
+[#section-three]
+[.impact]
+== Section Three
+
+include::{includedir}/outline.adoc[]
+
+[#conclusion]
+[.impact]
+== Conclusion

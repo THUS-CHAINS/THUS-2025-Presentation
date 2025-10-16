@@ -1,0 +1,8 @@
+/build/
+/node_modules/
+/public/
+.gradle/
+.idea/
+.vscode/
+.eclipse/
+.gitlab-ci-local/

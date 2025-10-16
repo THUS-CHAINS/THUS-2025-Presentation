@@ -1,0 +1,97 @@
+= Template for Asciidoctor-reveal Presentations
+
+This repository contains a template for creating https://docs.asciidoctor.org/reveal.js-converter/latest/[Asciidoctor-revealjs] presentations. 
+
+For more information about what kind of presentation you can do, take a look at this
+https://sunye-g.univ-nantes.io/asciidoctor-reveal-example/[example].
+
+
+https://gitlab.univ-nantes.fr/gl/templates/asciidoctor-reveal.js-template/-/archive/main/asciidoctor-reveal.js-template-main.tar.bz2[tarball]
+
+
+== Software Requirements 
+
+Ascidoctor-revealjs was developed in JavaScript and requires https://nodejs.org/en[node.js] version 16 or greater. 
+If node.js is not installed, I recommend to use https://asdf-vm.com[asdf], "The Multiple Runtime Version Manager",
+which will help you to manage different versions of node.js and other tools (Java, Python, Ruby, etc.). 
+
+
+
+== Getting started
+
+.Clone the repository and its sub-modules
+[shell]
+----
+git clone --recurse-submodules https://gitlab.univ-nantes.fr/gl/templates/asciidoctor-reveal.js-template.git my-presentation
+cd my-presentation
+make install
+----
+
+Push an existing Git repository
+
+[shell]
+----
+cd existing_repo
+git remote rename origin old-origin
+git remote add origin git@gitlab.univ-nantes.fr:gl/advanced/slides.git
+git push --set-upstream origin --all
+git push --set-upstream origin --tags
+----
+
+
+
+
+----
+├── Gemfile
+├── Gemfile.lock
+├── Makefile
+├── README.adoc
+├── build
+├── resources
+│   └── defaults
+│       ├── README.adoc
+│       ├── asciidoc
+│       │   └── commons.adoc
+│       ├── css
+│       │   └── custom.css
+│       ├── ignore-files
+│       │   ├── antora-ignore
+│       │   ├── asciidoctor-revealjs.ignore
+│       │   ├── auto-multiple-choices-ignore
+│       │   ├── gradle-java-ignore
+│       │   ├── maven-java-ignore
+│       │   └── npm-typescript-ignore
+│       ├── licenses
+│       │   └── nc-sa.adoc
+│       ├── makefiles
+│       │   └── asciidoc-reveal.mk
+│       └── plantuml
+│           ├── plantuml.config
+│           ├── puml-theme-sober.puml
+│           └── relational.iuml
+├── src
+│   ├── book
+│   │   └── asciidoc
+│   │       └── book.adoc
+│   ├── diagram
+│   │   └── plantuml
+│   │       └── example.puml
+│   └── slides
+│       └── asciidoc
+│           ├── includes
+│           │   └── outline.adoc
+│           └── index.adoc
+└── static
+    ├── css
+    │   ├── custom.css
+    │   ├── fonts
+    │   │   ├── opensans-latin-300.woff2
+    │   │   ├── opensans-latin-400.woff2
+    │   │   ├── ubuntu-mono-latin-400-normal.woff2
+    │   │   └── yanone-kaffeesatz-latin-400.woff2
+    │   └── stereopticon.css
+    ├── images
+    └── js
+        └── revealjs-plugins.js
+----
+

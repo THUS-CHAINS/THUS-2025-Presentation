@@ -1,0 +1,27 @@
+:revealjs_center: false
+:revealjs_display: flex
+:revealjs_transition: none
+:revealjs_slideNumber: c/t
+:revealjs_theme: black
+:revealjs_customtheme: css/stereopticon.css
+:revealjs_width: 1880
+:revealjs_height: 1080
+:revealjs_history: true
+:revealjs_margin: 0
+:customcss: css/custom.css
+:source-highlighter: rouge
+:rouge-css: style
+:sectids!:
+:revealjs_plugins: static/js/revealjs-plugins.js
+:imagesdir: images
+:includedir: includes
+:docinfo: shared
+:docinfodir: ../html 
+:icons: font
+:plantumldir: ../../diagram/plantuml
+:diagramdir: ../../diagram
+:plantuml-config: resources/defaults/plantuml/plantuml.config
+:javasources: ../../../main/java
+
+include::{includedir}/attributes.adoc[opts=optional]
+include::{includedir}/config.adoc[opts=optional]

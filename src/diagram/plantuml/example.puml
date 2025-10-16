@@ -1,0 +1,12 @@
+@startuml
+class Board <<Entity>> {
+	name : String
+}
+
+class Country << Entity >> {
+	name : String
+	color : Color
+}
+
+Board - "[*]" Country : "\t\t\t"
+@enduml
