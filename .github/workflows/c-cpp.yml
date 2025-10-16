@@ -36,6 +36,12 @@ jobs:
       - name: Build slides
         run: make slides
 
+      - name: Remove symlinks before deployment
+        run: find ./build/site -type l -exec rm {} +
+
+      - name: Check artifact size
+        run: du -sh ./build/site
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         
