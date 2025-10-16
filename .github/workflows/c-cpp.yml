@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: vinixnan/plantuml:latest
+      image: vinixnan/platuml:latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Makefile
+      - name: Build slides
         run: make slides
 
       - name: Upload slides as artifact
