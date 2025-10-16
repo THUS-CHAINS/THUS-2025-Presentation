@@ -25,6 +25,9 @@ jobs:
           apk add rsync
           apk add ruby ruby-dev ruby-bundler
 
+      - name: Install gems
+        run: make install
+        
       - name: Build slides
         run: make slides
 
