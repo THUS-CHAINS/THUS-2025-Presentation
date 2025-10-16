@@ -1,0 +1,35 @@
+name: Make Slide
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: asciidoctor/docker-asciidoctor:1.96
+
+    services:
+      kroki: 
+        image: docker.io/yuzutech/kroki
+    steps:
+      - name: Checkout repository and submodules
+        uses: actions/checkout@v4
+        with:
+           submodules: recursive
+
+      - name: Install rsync
+        run: |
+          apk add rsync
+          apk add ruby ruby-dev ruby-bundler
+
+      - name: Build slides
+        run: make slides
+
+      - name: Upload slides as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: slides
+          path: build/site/
