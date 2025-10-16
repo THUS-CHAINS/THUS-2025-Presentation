@@ -35,12 +35,8 @@ jobs:
             --attribute diagram-format=svg \
             -o build/site/index.html src/slides/asciidoc/index.adoc
 
-      - name: Upload to GitHub Release
-        uses: softprops/action-gh-release@v2
+      - name: Upload slides as artifact
+        uses: actions/upload-artifact@v4
         with:
-          tag_name: slides-${{ github.run_number }}
-          name: "Slides build #${{ github.run_number }}"
-          body: "Slides gerados automaticamente pela ação Make Slide."
-          files: build/site/**
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          name: slides
+          path: build/site/
