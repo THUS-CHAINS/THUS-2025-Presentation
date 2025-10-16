@@ -41,7 +41,7 @@ jobs:
       - name: Upload slides as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: slides
+          name: github-pages
           path: build/site/
 
       - name: Deploy to GitHub Pages
