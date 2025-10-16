@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # 🐳 Usa container que já vem com PlantUML + Graphviz + Java
+    # 🐳 Container já com PlantUML + Graphviz + Java
     container:
       image: plantuml/plantuml:latest
 
@@ -17,7 +17,8 @@ jobs:
 
       - name: Install Ruby and Asciidoctor
         run: |
-          apk add --no-cache ruby ruby-bundler ruby-dev build-base
+          apt-get update -qq
+          apt-get install -y ruby ruby-bundler ruby-dev build-essential
           gem install bundler
           gem install asciidoctor-revealjs asciidoctor-diagram
 
