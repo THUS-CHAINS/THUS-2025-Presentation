@@ -1,42 +1,108 @@
 :defaults: ../../../resources/defaults
 include::{defaults}/asciidoc/commons.adoc[]
-= Presentation Template
+= THUS Workshop 2025
+
+[.subtitle]
+CHAINS: Past, Present, and Future
+
+== Supply Chains for Secure and Sustainable Software
 
 
-== License
+[%step]
+--
+* « — Why can't I play Pokémon Cards on my Motorola Moto X? »
+
+image::pokemon-motorola.png[align=center,height=200px]
+--
+
+== Once Upon a Time the Software Development
+
+image::software-supplier.png[align=center,width=1200px]
+
+== Context
+
+.Software Artifacts depend on other Software Artifacts
+image::software-supplier-with-dependencies.png[align=center,width=800px]
+
+== Context -- Supply Chains
+
+.Simplified view of a supply chain
+image::dependency-chain.svg[align=center,width=1000px]
 
 [.font-size-64]
+TIP: A chain may contain hundreds or even thousands of suppliers.
+
+== Upstream Risks 
+
+image::dependency-chain-attacks.png[align=center,width=1000px]
+
+* Attaque `event-stream` : artefact Javascript, 1.5 millions de téléchargements par semaine, utilisé par 1.600 autres artefacts. Durée{nbsp}: 2,5 mois
+
+[.notes]
 --
-include::{defaults}/licenses/nc-sa.adoc[]
+2018, the NPM package event-stream was attacked. 
+This package has more than 1.5 million downloads per week and has 1,600 dependent packages.
+- Délivré le 4 Septembre 2018
+- découvert le 20 novembre 2018
 --
 
-include::{includedir}/outline.adoc[]
+== Downstream Uncertainties
 
-[#section-one]
+image::dependency-chain-downstream.png[align=center,width=1200px]
+
+[.notes]
+--
+On ignore qui utilise nos modules :
+toutes modification pourrait casser leur produit
+dépendances / applications 
+--
+
 [.impact]
-== Section One
+== Past, Present, and Future
 
-== PlantUML Example
+== Past
 
-[plantuml,,svg,width=800px,align=center]
-....
-include::{plantumldir}/example.puml[]
-....
+* Macelo E. in Nantes (2024)
+* Gerson in São Paulo (2025)
+* Joint PhD call 2025 icon:thumbs-down[]
+* ANR PRCI call 2025  icon:thumbs-down[]
+* Dialog PhD call 2025  icon:thumbs-down[]
+* IRP call 2025 icon:thumbs-down[]
 
-include::{includedir}/outline.adoc[]
 
-[#section-two]
-[.impact]
-== Section Two
+[.columns]
+== Present 
 
-include::{includedir}/outline.adoc[]
+[.column]
+* Dialog PhD call 2026 icon:check[]
+* ANR PRCI call 2026 icon:check[]
+* Joint PhD call 2026 icon:clock[]
+* IRP call 2026 icon:clock[]
 
-[#section-three]
-[.impact]
-== Section Three
+[.column]
+* PhD Joint Supervision (since October 2025)
+* Master Thesis (USP) 
+* Master Student Projects (Nantes U.)
 
-include::{includedir}/outline.adoc[]
+[.columns]
+== Present (Organization)
 
-[#conclusion]
-[.impact]
-== Conclusion
+[.column]
+* We have a https://thus-chains.github.io[Website] icon:firefox[]
+* We use  https://matrix.to/#/#thus-chains:matrix.org[Matrix] image:matrix-logo.svg[width=48px]
+* We are on https://github.com/thus-chains[GitHub] icon:github[]
+
+[.column]
+image::thus-matrix-room.png[align=center, width=400px]
+
+== Present (Preliminary Results)
+
+image::graphics-results-cloud-mean.pdf[align=center, width=1400px]
+
+
+== Future
+
+* Two on going papers (at last)
+* Visit _Software Heritage_
+* Virtual team meetings (every 2 weeks)
+* Energy-related experiments on Grid5k

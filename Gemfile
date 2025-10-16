@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'logger'
 gem 'asciidoctor-revealjs'
 gem 'asciidoctor-diagram'
 gem 'asciidoctor-kroki'
