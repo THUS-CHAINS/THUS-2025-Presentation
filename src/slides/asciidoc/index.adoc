@@ -5,6 +5,32 @@ include::{defaults}/asciidoc/commons.adoc[]
 [.subtitle]
 CHAINS: Past, Present, and Future
 
+
+[.columns]
+== Team Members
+
+[.column]
+.USP
+* Marcelo Medeiros Eler (coordinator)
+* Marcelo Morandini
+* Daniel Cordeiro
+* Sarita Mazzini
+* Vinícius Carvalho
+* Fernando Karchiloff (MSc)
+* _Felipe Cordeiro_ (PhD)
+
+[.column]
+--
+.LS2N (Nantes)
+* *Gerson Sunyé*  (coordinator)
+* Erwan Bousse - LS2N
+* Théo Le Calvar - LS2N
+* _Felipe Cordeiro_ (PhD)
+
+.Irisa (Rennes)
+* _Work in progress_
+--
+
 == Supply Chains for Secure and Sustainable Software
 
 
@@ -99,6 +125,25 @@ image::thus-matrix-room.png[align=center, width=400px]
 
 image::graphics-results-cloud-mean.pdf[align=center, width=1400px]
 
+[%notitle]
+== present
+
+image::total-requests.pdf[align=center, width=1400px]
+
+[%notitle]
+== present
+
+image::carbon-emission-by-request.pdf[align=center, width=1400px]
+
+[%notitle]
+== Present
+
+image::requests_barchart_comparison_106-109.png[align=center, width=1400px]
+
+[%notitle]
+== present
+
+image::requests_barchart_comparison_mean.png[align=center, width=1400px]
 
 == Future
 
