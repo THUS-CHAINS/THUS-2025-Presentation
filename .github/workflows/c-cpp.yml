@@ -19,8 +19,7 @@ jobs:
 
       - name: Install rsync
         run: |
-          apt-get update
-          apt-get install rsync
+          apk add rsync
 
       - name: Build slides
         run: make slides
