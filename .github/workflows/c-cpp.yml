@@ -13,11 +13,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # 🔧 Instala Ruby e Bundler
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2' # ou a versão que seu projeto usa
+          bundler-cache: true
+
+      # 🔧 Instala gems necessárias (se não estiverem no Gemfile)
+      - name: Install Asciidoctor dependencies
+        run: |
+          gem install bundler
+          gem install asciidoctor-revealjs asciidoctor-diagram
+
+      # 🧱 Compila os slides
       - name: Build slides
         run: make slides
 
+      # 📦 Salva o resultado como artefato
       - name: Upload slides as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: slides-pdf
-          path: build/slides/
+          name: slides
+          path: build/site/
