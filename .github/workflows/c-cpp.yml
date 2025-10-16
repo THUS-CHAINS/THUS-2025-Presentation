@@ -17,6 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install rsync
+        run: |
+          sudo apt-get update
+          sudo apt-get install rsync
+
       - name: Build slides
         run: make slides
 
