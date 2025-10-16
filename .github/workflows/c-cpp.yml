@@ -4,10 +4,16 @@ on:
   push:
     branches: [ "main" ]
 
+  workflow_dispatch:
+ 
 permissions:
   id-token: write
   contents: read
   pages: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
   
 jobs:
   build:
@@ -43,10 +49,10 @@ jobs:
         run: du -sh ./build/site
 
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
         
       - name: Upload slides as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: github-pages
           path: ./build/site/
