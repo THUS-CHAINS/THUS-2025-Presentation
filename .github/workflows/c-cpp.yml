@@ -9,8 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: vinixnan/platuml:latest
+      image: asciidoctor/docker-asciidoctor:1.96
 
+    services:
+      kroki: 
+        image: docker.io/yuzutech/kroki
     steps:
       - uses: actions/checkout@v4
 
