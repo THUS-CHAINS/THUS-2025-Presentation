@@ -9,31 +9,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout do repositório
       - uses: actions/checkout@v4
 
-      # 2️⃣ Instala Ruby e Bundler
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
-      # 3️⃣ Instala dependências do Asciidoctor
       - name: Install Asciidoctor dependencies
         run: |
           gem install bundler
           gem install asciidoctor-revealjs asciidoctor-diagram
 
-      # 4️⃣ Instala PlantUML e Graphviz
       - name: Install PlantUML and Graphviz
         run: |
           sudo apt-get update
           sudo apt-get install -y graphviz plantuml
-          plantuml -version
-          dot -V
 
-      # 5️⃣ Compila os slides (sem Kroki)
       - name: Build slides
         run: |
           bundle exec asciidoctor-revealjs \
@@ -42,7 +35,6 @@ jobs:
             --attribute diagram-format=svg \
             -o build/site/index.html src/slides/asciidoc/index.adoc
 
-      # 6️⃣ Cria release automático com os slides gerados
       - name: Upload to GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -51,4 +43,4 @@ jobs:
           body: "Slides gerados automaticamente pela ação Make Slide."
           files: build/site/**
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
