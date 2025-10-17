@@ -30,9 +30,9 @@ jobs:
 
       - name: Install rsync
         run: |
-          apt update
-          apt install rsync
-          apt install ruby ruby-dev ruby-bundler
+          sudo apt-get update
+          sudo apt-get -y install rsync
+          sudo apt-get -y install ruby ruby-dev ruby-bundler
 
       - name: Install gems
         run: make install
